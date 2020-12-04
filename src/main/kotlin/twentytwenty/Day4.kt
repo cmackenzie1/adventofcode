@@ -2,7 +2,7 @@ package twentytwenty
 
 import java.io.File
 
-
+//TODO: Split using "\n\n" silly.
 fun main() {
     val day4 = Day4()
     day4.partOne()
