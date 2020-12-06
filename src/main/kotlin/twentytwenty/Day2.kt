@@ -1,7 +1,5 @@
 package twentytwenty
 
-import java.io.File
-
 class PasswordPolicy(
     val min: Int,
     val max: Int,
@@ -43,9 +41,10 @@ fun main() {
 }
 
 class Day2 {
+    private val inputText = ResourceLoader.loadText("day2.txt")
     fun partOne() {
         var correct = 0
-        File("/Users/colemackenzie/github/pragmaticdev-io/adventofcode/src/main/resources/twentytwenty/day2.txt").forEachLine {
+        inputText.reader().forEachLine {
             val split = it.split(":")
             val password = split.last().trim()
             val passwordPolicy = PasswordPolicy.fromString(split.first())
@@ -58,7 +57,7 @@ class Day2 {
 
     fun partTwo() {
         var correct = 0
-        File("/Users/colemackenzie/github/pragmaticdev-io/adventofcode/src/main/resources/twentytwenty/day2.txt").forEachLine {
+        inputText.reader().forEachLine {
             val split = it.split(":")
             val password = split.last().trim()
             val passwordPolicy = PasswordPolicy.fromString(split.first())

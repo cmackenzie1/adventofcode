@@ -1,11 +1,10 @@
 package twentytwenty
 
-import java.io.File
-
 class Day1 {
+    val inputText = ResourceLoader.loadText("day1.txt")
     fun partOne() {
         val seen = mutableSetOf<Int>()
-        File("/Users/colemackenzie/github/pragmaticdev-io/adventofcode/src/main/resources/twentytwenty/day1.txt").forEachLine {
+        inputText.lines().forEach {
             val x = it.toInt()
             val target = 2020 - x
             if (target in seen) {
@@ -20,7 +19,7 @@ class Day1 {
 
     fun partTwo() {
         val lines =
-            File("/Users/colemackenzie/github/pragmaticdev-io/adventofcode/src/main/resources/twentytwenty/day1.txt").readLines()
+            inputText.reader().readLines()
                 .map {
                     it.toInt()
                 }
