@@ -22,7 +22,7 @@ class Day6 {
         inputText.split("\n\n").map { group ->
             group.lines().map {
                 it.toCharArray().filter { it.isLetter() }.toSet()
-            }.reduceRight { set, acc -> set.intersect(acc) }.count()
+            }.filter { it.isNotEmpty() }.reduceRight { set, acc -> set.intersect(acc) }.count()
         }.sum().let(::println)
     }
 }
