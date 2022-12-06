@@ -6,6 +6,9 @@ import (
 	"os"
 )
 
+// ReadLines reads a valid AoC input path and
+// splits the file into a slice of strings, using
+// newline as a delimiter.
 func ReadLines(path string) ([]string, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -20,5 +23,6 @@ func ReadLines(path string) ([]string, error) {
 		l := scanner.Text()
 		lines = append(lines, l)
 	}
+
 	return lines, nil
 }
