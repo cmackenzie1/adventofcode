@@ -2,11 +2,9 @@ package containers
 
 import (
 	"fmt"
-	"sync"
 )
 
 type Set[K comparable] struct {
-	sync.Mutex
 	m map[K]struct{}
 }
 
@@ -20,8 +18,6 @@ func NewSet[K comparable]() *Set[K] {
 
 // Add inserts an element into the set if it does not already exist
 func (s *Set[K]) Add(k K) {
-	s.Lock()
-	defer s.Unlock()
 	s.add(k)
 }
 
@@ -32,8 +28,6 @@ func (s *Set[K]) add(k K) {
 // AddAll inserts each element of a "splat-able" slice into the set.
 // A "splat-able" slice is a slice where the `...` operator does not modify the type.
 func (s *Set[K]) AddAll(v ...K) {
-	s.Lock()
-	defer s.Unlock()
 	for _, k := range v {
 		s.add(k)
 	}

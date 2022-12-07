@@ -24,6 +24,9 @@ var solutions = map[string]func(input string){
 
 	"d5p1": days.Day5Part1,
 	"d5p2": days.Day5Part2,
+
+	"d6p1": days.Day6Part1,
+	"d6p2": days.Day6Part2,
 }
 
 func main() {
