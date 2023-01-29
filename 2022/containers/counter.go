@@ -22,21 +22,6 @@ func (s *Counter[K]) Add(k K) {
 	}
 }
 
-func (s *Counter[K]) AddAll(v ...K) {
-	for _, k := range v {
-		s.Add(k)
-	}
-}
-
 func (s *Counter[K]) Remove(k K) {
 	delete(s.m, k)
-}
-
-func (s *Counter[K]) Contains(k K) bool {
-	_, c := s.m[k]
-	return c
-}
-
-func (s *Counter[K]) Total(k K) int {
-	return s.m[k]
 }
