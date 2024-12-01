@@ -12,5 +12,5 @@ brew install elixir
 ## Run
 
 ```bash
-elixir day1.exs
+elixir day01.exs
 ```
